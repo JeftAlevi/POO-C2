@@ -1,21 +1,22 @@
 package pe.edu.upeu.herencia;
 
-public class Carro extends Vehiculo{
-    String modelo="TOYOTA";
-    String placa="PE-123456";
-    String color="ROJO PA QUE NO SE VEA SU SANGRE";
+import pe.edu.upeu.encapsulamiento.Jugador;
 
+public class Carro extends Vehiculo{
+    String modelo="MISTANG";
+    String color="AMARILLO";
+    String placa="PE-213123123";
     void caracteristicas(){
-        System.out.println("Las caracteristicas de este carro son");
-        System.out.println("Marca: "+marca);
-        System.out.println("Modelo: "+modelo);
-        System.out.println("Placa: "+placa);
+
+        System.out.println("LAS CARACTERISTICAS DE ESTE CARR SON:");
+        System.out.println("Modelo: "+marca); //atributo heredado
         System.out.println("Color: "+color);
+        System.out.println("Placa: "+placa);
     }
 
-    public void main(String[] args){
-        Carro carro = new Carro();
+    public static void main(String[] args) {
+        Carro carro=new Carro();
         carro.caracteristicas();
-        carro.sonido();
+        carro.sonido();//metodo heredado
     }
 }

@@ -1,15 +1,15 @@
-package pe.edu.upeu.encapsulamiento.modelo;
+package pe.edu.upeu.encapsulamiento;
 
 public class Estudiante {
     private String codigo;
     private String carrera;
 
+
     public void trabajo(){
-        System.out.println("Estudiar, investigar....!"+
-                "en la carrera de: "+carrera);
+        System.out.println("Estudiar!, investigar en la carrera de: "+carrera);
     }
 
-    public String getCodigo() {
+    public String getCodigo(String number) {
         return codigo;
     }
 
@@ -17,7 +17,7 @@ public class Estudiante {
         this.codigo = codigo;
     }
 
-    public String getCarrera() {
+    public String getCarrera(String s) {
         return carrera;
     }
 
@@ -25,6 +25,3 @@ public class Estudiante {
         this.carrera = carrera;
     }
 }
-
-
-

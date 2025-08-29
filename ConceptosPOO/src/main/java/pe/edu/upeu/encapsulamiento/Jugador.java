@@ -1,14 +1,10 @@
 package pe.edu.upeu.encapsulamiento;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
-/*@Getter
-
-@Setter*/
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class Jugador {
     private String nombre;
     private String apellido;
@@ -17,13 +13,14 @@ public class Jugador {
     private int numeroCam;
 
     @Override
-    public String toString() {
-        return "El jugador tiene estas caracteristicas:\n" +
+    public String toString(){
+        return "el jugador tiene estas caracteristicas:\n" +
                 "nombre:"+nombre+"\n"
-                + "apellido:"+apellido+"\n"
-                + "edad:"+edad+"\n"
-                + "posicion:"+posicion+"\n"
-                +  "Camiseta N:"+numeroCam+"\n";
+                +"Apellido: "+apellido+"\n"
+                +"Edad: "+edad+"\n"
+                +"Posicion: "+posicion+"\n"
+                +"Camiseta N°: "+numeroCam+"\n";
 
     }
 }
+

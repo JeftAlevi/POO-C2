@@ -1,22 +1,12 @@
 package pe.edu.upeu.encapsulamiento;
 
-
 public class Persona {
-    private String nombre;
-    private int edad;
-    private char genero;
+    String nombre;
+    int edad;
+    char genero;
 
-
-    void saludo(){
-        System.out.println("Hola, mi nombre es "+nombre+" y mi edad es "+edad);
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    void saludo (){
+        System.out.println("mi nombre es "+nombre+" y mi edad es "+edad);
     }
 
     public int getEdad() {
@@ -27,6 +17,14 @@ public class Persona {
         this.edad = edad;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public char getGenero() {
         return genero;
     }
@@ -34,8 +32,5 @@ public class Persona {
     public void setGenero(char genero) {
         this.genero = genero;
     }
-
-
 }
-
 
