@@ -1,5 +1,5 @@
 package pe.edu.upeu.asistencia.enums;
 
-public enum TIpoParticipante {
+public enum TipoParticipante {
     ASISTENTE, ORGANIZADOR, PONENTE
 }
