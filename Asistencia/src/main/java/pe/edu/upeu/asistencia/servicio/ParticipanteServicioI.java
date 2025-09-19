@@ -1,15 +1,15 @@
 package pe.edu.upeu.asistencia.servicio;
 
-import pe.edu.upeu.asistencia.modelo.Participante;
+import pe.edu.upeu.asistencia.modelo.Cliente;
 
 import java.util.List;
 
 public interface ParticipanteServicioI {
-    void save(Participante participante); //C
-    List<Participante> findAll(); //R
-    Participante update(Participante participante, int index); //U
+    void save(Cliente cliente); //C
+    List<Cliente> findAll(); //R
+    Cliente update(Cliente cliente, int index); //U
     void delete(int index); //D
 
-    Participante findById(int index); //B
+    Cliente findById(int index); //B
 
 }

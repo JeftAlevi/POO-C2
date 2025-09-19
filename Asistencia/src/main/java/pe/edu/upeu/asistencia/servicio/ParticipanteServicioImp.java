@@ -1,7 +1,7 @@
 package pe.edu.upeu.asistencia.servicio;
 
 import org.springframework.stereotype.Service;
-import pe.edu.upeu.asistencia.modelo.Participante;
+import pe.edu.upeu.asistencia.modelo.Cliente;
 import pe.edu.upeu.asistencia.repositorio.ParticipanteRepository;
 import java.util.List;
 
@@ -9,27 +9,27 @@ import java.util.List;
 public class ParticipanteServicioImp extends ParticipanteRepository
         implements ParticipanteServicioI {
     @Override
-    public void save(Participante participante) {
-        participantes.add(participante);
+    public void save(Cliente cliente) {
+        clientes.add(cliente);
     }
     @Override
-    public Participante update(Participante participante, int index) {
-        return participantes.set(index, participante);
+    public Cliente update(Cliente cliente, int index) {
+        return clientes.set(index, cliente);
     }
     @Override
     public void delete(int index) {
-        participantes.remove(index);
+        clientes.remove(index);
     }
     @Override
-    public Participante findById(int index) {
-        return participantes.get(index);
+    public Cliente findById(int index) {
+        return clientes.get(index);
     }
 
     @Override
-    public List<Participante> findAll(){
-        if(participantes.isEmpty()){
+    public List<Cliente> findAll(){
+        if(clientes.isEmpty()){
             return super.findAll();
         }
-        return participantes;
+        return clientes;
     }
 }

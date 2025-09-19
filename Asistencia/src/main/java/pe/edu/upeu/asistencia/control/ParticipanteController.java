@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import pe.edu.upeu.asistencia.enums.Carrera;
 import pe.edu.upeu.asistencia.enums.TipoParticipante;
-import pe.edu.upeu.asistencia.modelo.Participante;
+import pe.edu.upeu.asistencia.modelo.Cliente;
 import pe.edu.upeu.asistencia.servicio.ParticipanteServicioI;
 
 @Controller
@@ -26,12 +26,12 @@ public class ParticipanteController {
     @FXML
     private TextField txtNombres,  txtApellidos, txtDni;
     @FXML
-    private TableView<Participante> tableRegPart;
-    ObservableList<Participante> participantes;
+    private TableView<Cliente> tableRegPart;
+    ObservableList<Cliente> clientes;
     @Autowired
     ParticipanteServicioI ps;
-    TableColumn<Participante, String> dniCol, nombreCol, apellidoCol, carreraCol, tipoParticipanteCol;
-    TableColumn<Participante, Void> opcCol;
+    TableColumn<Cliente, String> dniCol, nombreCol, apellidoCol, carreraCol, tipoParticipanteCol;
+    TableColumn<Cliente, Void> opcCol;
     int indexEdit=-1;
     @FXML
     public void initialize(){
@@ -52,7 +52,7 @@ public class ParticipanteController {
     }
     @FXML
     public void registrarParticipante(){
-        Participante p = new Participante();
+        Cliente p = new Cliente();
 
         p.setDni(new SimpleStringProperty(txtDni.getText()));
         p.setNombre(new SimpleStringProperty(txtNombres.getText()));
@@ -90,14 +90,14 @@ public class ParticipanteController {
                 cellData->new SimpleStringProperty(cellData.getValue().getTipoParticipante().toString())
         );
         agregarAccionesButton();
-        participantes = FXCollections.observableList(ps.findAll());
-        tableRegPart.setItems(participantes);
+        clientes = FXCollections.observableList(ps.findAll());
+        tableRegPart.setItems(clientes);
     }
     public void eliminarPartipantes(int index){
         ps.delete(index);
         listarPartipantes();
     }
-    public void editarPartipante(Participante p, int index){
+    public void editarPartipante(Cliente p, int index){
         txtDni.setText(p.getDni().getValue());
         txtNombres.setText(p.getNombre().getValue());
         txtApellidos.setText(p.getApellidos().getValue());
@@ -107,13 +107,13 @@ public class ParticipanteController {
     }
 
     public void agregarAccionesButton(){
-        Callback<TableColumn<Participante, Void>, TableCell<Participante, Void>>
+        Callback<TableColumn<Cliente, Void>, TableCell<Cliente, Void>>
                 cellFactory = param -> new TableCell<>(){
             private final Button btnEdit = new Button("Editar");
             private final Button btnDelet = new Button("Eliminar");
             {
                 btnEdit.setOnAction(event -> {
-                    Participante p =getTableView().getItems().get(getIndex());
+                    Cliente p =getTableView().getItems().get(getIndex());
                     editarPartipante(p, getIndex());
                 });
                 btnDelet.setOnAction(event -> {

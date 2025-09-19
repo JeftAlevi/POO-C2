@@ -11,7 +11,7 @@ import pe.edu.upeu.asistencia.enums.TipoParticipante;
 //@Data
 @Setter
 @Getter
-public class Participante {
+public class Cliente {
     private StringProperty dni;
     private StringProperty nombre;
     private StringProperty apellidos;

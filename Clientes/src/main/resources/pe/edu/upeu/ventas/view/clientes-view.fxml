@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pe.edu.upeu.ventas.control.ClienteController">
+
+    <center>
+        <VBox spacing="10" alignment="CENTER" padding="20">
+
+            <!-- Tabla de clientes -->
+            <TableView fx:id="tablaClientes" prefHeight="250" prefWidth="700">
+                <columns>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="140"/>
+                    <TableColumn fx:id="colDni" text="DNI" prefWidth="100"/>
+                    <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="120"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="160"/>
+                    <TableColumn fx:id="colDireccion" text="Dirección" prefWidth="180"/>
+                </columns>
+            </TableView>
+
+            <!-- Formulario para registrar clientes -->
+            <HBox spacing="10">
+                <TextField fx:id="txtNombre" promptText="Nombre"/>
+                <TextField fx:id="txtDni" promptText="DNI"/>
+                <TextField fx:id="txtTelefono" promptText="Teléfono"/>
+                <TextField fx:id="txtEmail" promptText="Email"/>
+                <TextField fx:id="txtDireccion" promptText="Dirección"/>
+                <Button text="Agregar" onAction="#agregarCliente"/>
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>
